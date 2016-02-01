@@ -1,14 +1,8 @@
-/* border 直線 */
-.verticalLine {
-	border-left: 1px solid #dddddd;
-	margin-left: 5px;
-	margin-right: 5px;
-}
 
 /* body style */
 body {
 	font-size: 25px;
-	font-family: "Comic Sans MS", "細明體", "Times New Roman", "Georgia", "Serif";
+	font-family: "Comic Sans MS", "嚙諉抬蕭嚙踝蕭", "Times New Roman", "Georgia", "Serif";
 	padding: 40px;
 /* 	height: 800px; */
 	background-attachment: fixed;
@@ -33,17 +27,14 @@ textarea {
 	padding: 7px 9px;
 }
 
-/* 使滑鼠移動到該原件上時顯示為手指圖案 */
 .pointer {
 	cursor: pointer;
-	/* 文字不可選(反藍) */
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none;     /* Firefox all */	
 	-ms-user-select: none;      /* IE 10+ */
 	user-select: none;          /* Likely future */   
 }
 
-/* box 容器 */
 .box {
 	margin-bottom: 10px;
 	padding: 10px;
@@ -73,12 +64,10 @@ textarea {
 /* 	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3); */
 }
 
-/* 必填欄位顏色 */
 .required {
 	background-color: linen;
 }
 
-/* 覆寫 bootstrap .row */
 .row {
 	margin-right: 0px;
     margin-left: 0px;
@@ -99,12 +88,4 @@ textarea {
 }
 .odd {
 	background-color: #AAFFC4;
-}
-
-/* 寬度 1200 px以上 套用以下設定 */
-@media (min-width: 1200px) {
-	body {
-		padding-left: 20%;
-		padding-right: 20%;
-	}
 }
