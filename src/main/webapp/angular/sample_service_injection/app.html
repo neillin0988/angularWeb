@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Dependency Injection service</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/resource/css/main.css">
+	
+	<style>
+	</style>
+	
+</head>
+
+<body>
+    <div class="container">
+		<div class="alert alert-info">Dependency Injection service</div>
+
+		<div class="box">
+			<p><a href="/index-angular.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
+		</div>
+
+		<p class="blue">ng-controller="myCtrl"</p>
+		<div class="box" ng-controller="myCtrl">
+			<p><span class="green">$scope.name :</span> <span ng-bind="name"><span></p>
+			<div>
+				<p><span class="green">$scope.service1name :</span> <span ng-bind="service1name"></span></p>
+				<p><span class="green">$scope.service2name :</span> <span ng-bind="service2name"></span></p>
+			</div>
+		</div>
+		<p class="blue">ng-controller="myCtrl2 as myCtrl"</p>
+		<div class="box" ng-controller="myCtrl2 as myCtrl">
+			<p><span class="green">myCtrl :</span> <span ng-bind="myCtrl.name"><span></p>
+			<div>
+				<p><span class="green">myCtrl.service1name :</span> <span ng-bind="myCtrl.service1name"></span></p>
+				<p><span class="green">myCtrl.service2name :</span> <span ng-bind="myCtrl.service2name"></span></p>
+			</div>
+		</div>
+    </div>
+
+</body>
+
+<script src="/resource/plugin/angular-1.4.8/js/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="service.js"></script>
+
+</html>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Dependency Injection service</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resource/css/main.css">
+	
+	<style>
+        input.ng-invalid {
+            /*border : 1px solid red */
+            color : red
+        }
+        input.ng-valid {
+            /* border : 1px solid green*/
+            color : none;
+        }
+        
+	</style>
+	
+</head>
+
+<body>
+    <div class="container">
+		<div class="alert alert-info">Dependency Injection service</div>
+
+        <div class="box">
+            <p><a href="/index-angular.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
+        </div>
+
+        <div class="box" ng-controller="myCtrl">
+            <form name="form">
+                <p style="font-size:20px" class="blue">雖然驗證是用表單及input的name來取得結果, 但還是要有ng-model才有用</p>
+                <div class="row">
+                  <label for="email" class="col-sm-2 form-control-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email" ng-model="ngemail" placeholder="Email">
+                    <span class="green">form.email.$error.email</span> : {{form.email.$error.email}}
+                  </div>
+                </div>
+                <div class="row">
+                  <label for="inputPassword3" class="col-sm-2 form-control-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                  </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 form-control-label">account</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="account" ng-model="ngaccount" class="form-control"
+                            ng-minlength="3"
+                            ng-maxlength="5"
+                            required
+                        >
+                    </div>
+                </div>
+                <div class="">
+                    <span style="font-size:20px" class="red">該欄位是否未曾輸入過資料</span>
+                    <span><span class="green">form.account.$pristine</span> : {{form.account.$pristine}}</span>
+                </div>
+                <div class="">
+                    <span style="font-size:20px" class="red">該欄位是否曾輸入過資料</span>
+                    <span><span class="green">form.account.$dirty</span> : {{form.account.$dirty}}</span>
+                </div>
+                <div class="">
+                    <span style="font-size:20px" class="red">該欄位是否未通過驗證</span>
+                    <span><span class="green">form.account.$invalid</span> : {{form.account.$invalid}}</span>
+                </div>
+                <div class="">
+                    <span style="font-size:20px" class="red">該欄位是否通過驗證</span>
+                    <span><span class="green">form.account.$valid</span> : {{form.account.$valid}}</span>
+                </div>
+                
+                <div class="">
+                    <span class="green">例如 required 未填時則 $error = <span class="green">"required":true</span></span> <br/>
+                    <span class="green">form.account.$error</span> : {{form.account.$error}} <br/>
+                    <span class="green">form.account.$error.required</span> : {{form.account.$error.required}} <br/>
+                    <span class="green">form.account.$error.minlength</span> : {{form.account.$error.minlength}} <br/>
+                    <span class="green">form.account.$error.maxlength</span> : {{form.account.$error.maxlength}} <br/>
+                </div>
+            </form>
+		</div>
+		
+    </div>
+
+</body>
+
+<script src="/resource/plugin/angular-1.4.8/js/angular.min.js"></script>
+<script src="app.js"></script>
+
+</html>

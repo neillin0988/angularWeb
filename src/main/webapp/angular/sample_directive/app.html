@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>sample_directive</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/resource/css/main.css">
+	
+	<style>
+		input[type="checkbox"] {
+			WIDTH: 40px; HEIGHT: 40px;
+		}
+	</style>
+	
+</head>
+
+<body>
+    <div class="container"style="font-size: 30px">
+		<div class="alert alert-info">
+			sample_directive <br/>
+			僅列出比較常用的 <br/>
+			可參考 : <a href="https://docs.angularjs.org/api/ng/directive" target="directive" >https://docs.angularjs.org/api/ng/directive</a>
+		</div>
+		
+		<div ng-controller="myCtrl">
+
+			<div class="box">
+				<p><a href="/index-angular.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
+			</div>
+
+			<div class="box row" style="z-index:999; position: fixed; right: 50px;">
+				<label class="pointer"><input type="checkbox" ng-model="valueA"> valueA</label> = <span class="blue" ng-bind="valueA"></span>
+				<br/>
+				<label class="pointer"><input type="checkbox" ng-model="valueB"> valueB</label> = <span class="blue" ng-bind="valueB"></span>
+			</div>
+			
+			<div class="box row">
+				<p class="blue">ng-disabled</p>
+				<div class="col-sm-6">
+					<input type="text" ng-disabled="valueA"><br/> ng-disable="valueA"
+				</div>
+				<div class="col-sm-6">
+					<input type="text" ng-disabled="valueA && valueB"><br/> ng-disable="valueA && valueB"
+				</div>
+			</div>
+			
+			<div class="box">
+				<p class="blue">ng-repeat</p>
+				<div class="row" style="font-size:25px">
+					<div class="col-sm-6">
+						<div class="row" style="border-bottom: 1px solid #dddddd">
+							<div class="col-sm-6" >name</div>
+							<div class="col-sm-3" >atk</div>
+							<div class="col-sm-3" >price</div>
+						</div>
+						<div class="row" ng-class="{even : valueA}" ng-repeat="data in dataLs" style="border-bottom: 1px solid #dddddd">
+							<div class="col-sm-6" ng-bind="data.name"></div>
+							<div class="col-sm-3" ng-bind="data.atk"></div>
+							<div class="col-sm-3" ng-bind="data.price"></div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row" style="border-bottom: 1px solid #dddddd">
+							<div class="col-sm-1" >no.</div>
+							<div class="col-sm-6" >name</div>
+							<div class="col-sm-2" >atk</div>
+							<div class="col-sm-3" >price</div>
+						</div>
+						<div class="row" ng-class="{even : $even && valueB, odd : $odd && valueA}" ng-repeat="data in dataLs" style="border-bottom: 1px solid #dddddd">
+							<div class="col-sm-1" >{{[$index]}}</div>
+							<div class="col-sm-6" ng-bind="data.name"></div>
+							<div class="col-sm-2" ng-bind="data.atk"></div>
+							<div class="col-sm-3" ng-bind="data.price"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="box row" style="font-size:30px">
+				<p class="blue">ng-show / ng-hide : 是將元件 display: none !important; or not</p>
+				<div ng-show="valueA" class="red">[this is divA ng-show="valueA"] <span class="blue">SHOW</span> when [valueA] is true</div>
+				<div ng-hide="valueA" class="green">[this is divB ng-hide="valueA"] <span class="blue">HIDE</span> when [valueA] is true</div>
+				
+				<p class="blue">ng-if : when false,  HTML code 會消失</p>
+				<div ng-if="valueA" class="red">[this is divA ng-if="valueA"] <span class="blue">SHOW</span> when [valueA] is true</div>
+				<div ng-if="!valueA" class="green">[this is divB ng-if="valueA"] <span class="blue">HIDE</span> when [valueA] is true</div>
+			</div>
+			
+			<div class="box row" style="font-size:30px">
+				<input style="width:100%" type="button" class="btn btn-success"  value="click me"
+					ng-click="ngClick($event)"
+					ng-mouseover="ngMouseover($event)"
+					ng-mouseleave="ngMouseLeave($event)"
+				>
+			</div>
+			
+			<div class="box row" style="font-size:30px">
+				<p class="blue">ng-change</p>
+				<input type="text" ng-model="test" ng-change="ngChange($event)"><span ng-bind="changeValue"></span>
+			</div>
+			
+			<div class="box row" style="font-size:30px">
+				<p class="blue">ng-ngBlur</p>
+				<input type="text" ng-model="test" ng-blur="ngBlur($event)"><span ng-bind="blurValue"></span>
+			</div>
+			
+			<div class="box row" style="font-size:30px">
+				<p class="blue">ngChange is just for the input, <br/>if you want to listen the model do like this</p>
+<pre class="box">
+$scope.$watch('test', function(newValue, oldValue) {
+    $scope.ngChange();
+});
+</pre>
+			</div>
+		</div>
+    </div>
+
+</body>
+
+
+<script src="/resource/plugin/angular-1.4.8/js/angular.min.js"></script>
+<script src="/resource/plugin/jquery-1.11.1/jquery.min.js"></script>
+<script src="app.js"></script>
+
+</html>
