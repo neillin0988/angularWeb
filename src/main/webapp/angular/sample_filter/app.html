@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>sample_directive</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/resource/css/main.css">
+	
+	<style>
+		input[type="checkbox"] {
+			WIDTH: 40px; HEIGHT: 40px;
+		}
+	</style>
+	
+</head>
+
+<body>
+    <div class="container"style="font-size: 30px">
+		<div class="box">
+			<p><a href="/index-angular.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
+		</div>
+
+		<div ng-controller="myCtrl">
+
+			<div class="box">
+				Cost1 as currency : {{cost}}  <br>
+				Cost1 as currency : {{cost | currency}}	<br>
+				Cost1 as currency : {{cost | currency:"NT$":0}}	<br>
+			</div>
+
+			<div class="box">
+				Date time : {{date}}  <br>
+				Date time : {{date | date}}  <br>
+				Date time : {{date | date:"yyyy/MM/dd"}}  <br>
+			</div>
+
+			<div class="box">
+				num : {{num}}  <br>
+				num : {{num | number:1}}  <br>
+				num : {{num | number:2}}  <br>
+			</div>
+		</div>
+    </div>
+
+</body>
+
+
+<script src="/resource/plugin/angular-1.4.8/js/angular.min.js"></script>
+<script src="/resource/plugin/jquery-1.11.1/jquery.min.js"></script>
+<script src="app.js"></script>
+
+</html>
