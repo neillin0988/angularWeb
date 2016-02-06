@@ -1,0 +1,158 @@
+<div id="left" style="padding-top: 50px" class="bg-dark dk" ng-controller="SidebarController">
+    <!-- #menu -->
+    <ul id="menu" class="bg-blue dker" >
+
+        <li ui-sref-active="active">
+            <a ui-sref="home">
+                <i class="glyphicon glyphicon-home"></i>
+                <span translate="global.menu.home">Home</span>
+            </a>
+        </li>
+
+        <li ui-sref-active="active"  class="dropdown pointer">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <i class="glyphicon glyphicon-tower"></i>
+                <span class="hidden-tablet" translate="global.menu.report">Report</span>
+                <i class="glyphicon glyphicon-chevron-right float-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active"  >
+                    <a ui-sref="report">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <span translate="global.menu.publishreport">Report</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active"  >
+                    <a ui-sref="agencyReport">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <span translate="global.menu.agencyReport">Report</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active"  >
+                    <a ui-sref="systemReport">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <span translate="global.menu.systemReport">Report</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active" >
+                    <a ui-sref="monthlySalesReport">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <span translate="global.menu.monthlySalesReport">Monthly Sales Report</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li ui-sref-active="active"   class="dropdown pointer">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <i class="glyphicon glyphicon-tower"></i>
+                <span class="hidden-tablet" translate="global.menu.entities.main">Manage</span>
+                <i class="glyphicon glyphicon-chevron-right float-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active">
+                    <a ui-sref="role">
+                        <i class="fa fa-user"></i>
+                        &#xA0;<span translate="global.menu.entities.role">role</span></a></li>
+
+                <li ui-sref-active="active" >
+                    <a ui-sref="agency">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                        &#xA0;<span translate="global.menu.entities.agency">agency</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="publisher">
+                        <i class="glyphicon glyphicon-globe"></i>
+                    &#xA0;<span translate="global.menu.entities.publisher">publisher</span></a></li>
+
+                <li ui-sref-active="active"><a ui-sref="space">
+                    <i class="glyphicon glyphicon-picture"></i>
+                    &#xA0;<span translate="global.menu.entities.space">space</span></a></li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="auditLog">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                        &#xA0;<span translate="global.menu.entities.auditLog">Audit Log</span>
+                        </a>
+                </li>
+                <!-- JHipster will add entities to the menu here -->
+            </ul>
+        </li>
+
+        <li ui-sref-active="active"  class="dropdown pointer">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <i class="glyphicon glyphicon-tower"></i>
+                <span class="hidden-tablet" translate="global.menu.administration">aAministration</span>
+                <i class="glyphicon glyphicon-chevron-right float-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active">
+                    <a ui-sref="accountManage">
+                        <i class="fa fa-users"></i>
+                        &#xA0;<span translate="global.menu.entities.accountManage">Account Manage</span></a></li>
+
+                <li ui-sref-active="active"><a ui-sref="nativeSpace">
+                    <i class="glyphicon glyphicon-thumbs-up"></i>
+                    &#xA0;<span translate="global.menu.entities.nativeSpace">nativeSpace</span></a></li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="exchangeRate">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        &#xA0;<span translate="global.menu.exchangeRate">Exchange Rate</span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active">
+                    <a ui-sref="excuteApi">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        &#xA0;<span>手動執行API</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li ui-sref-active="active"  class="dropdown pointer">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <i class="glyphicon glyphicon-tower"></i>
+                <span class="hidden-tablet" translate="global.menu.admin.main">System</span>
+                <i class="glyphicon glyphicon-chevron-right float-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active"><a ui-sref="metrics"><i class="glyphicon glyphicon-dashboard"></i>
+                    &#xA0;<span translate="global.menu.admin.metrics">Metrics</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="health"><i class="glyphicon glyphicon-heart"></i>
+                    &#xA0;<span translate="global.menu.admin.health">Health</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="configuration"><span
+                    class="glyphicon glyphicon-list-alt"></span>
+                    &#xA0;<span translate="global.menu.admin.configuration">Configuration</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="audits"><i class="glyphicon glyphicon-bell"></i>
+                    &#xA0;<span translate="global.menu.admin.audits">Audits</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="logs"><i class="glyphicon glyphicon-tasks"></i>
+                    &#xA0;<span translate="global.menu.admin.logs">Logs</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="docs"><i class="glyphicon glyphicon-book"></i>
+                    &#xA0;<span translate="global.menu.admin.apidocs">API Docs</span></a></li>
+            </ul>
+        </li>
+
+        <li id="toggleMenu">
+            <a>
+                <i class="glyphicon glyphicon-circle-arrow-right hidden"></i>
+                <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                <span translate="global.menu.collapse">Collapse</span>
+            </a>
+            <script>
+                $(function () {
+                    $('#toggleMenu').click(function () {
+                        $('#left').toggleClass('small-icon');
+                        $('#toggleMenu i').toggleClass('hidden');
+                        setTimeout(function(){ $(window).resize(); }, 500);
+                    });
+                });
+            </script>
+        </li>
+    </ul>
+    <!-- /#menu -->
+</div>

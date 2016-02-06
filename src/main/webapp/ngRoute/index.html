@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
     <title>_angularJs template</title>
     <!-- Include meta tag to ensure proper rendering and touch zooming -->
@@ -7,9 +7,8 @@
 
     <!-- Include bootstrap stylesheets -->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/resource/css/main.css">
+    <link rel="stylesheet" href="/resource/plugin/bootstrap v3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resource/css/main.min.css">
 
     <style>
         body {
@@ -19,49 +18,34 @@
 
 </head>
 
-<body>
-<div>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Project name</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/index.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-    </nav>
+<body ng-app="rmaxAdminApp" class="bg-dark dk" id="wrap">
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div ng-include="'page/component/navbar.html'"></div>
+<div ng-include="'page/component/sidebar.html'"></div>
 
-    <div class="row">
-        <div class="col-md-2">
-            <ul class="nav box">
-                <li><a href="#report"> report </a></li>
-                <li><a href="#system"> system </a></li>
-            </ul>
-        </div>
-        <div class="col-md-10">
-            <div id="main" class="box">
-
-                <!-- angular templating -->
-                <!-- this is where content will be injected -->
-                <div ng-view></div>
-
-            </div>
-        </div>
+<div id="content">
+    <div class="well inner">
+        <ui-breadcrumbs displayname-property="data.displayName" template-url="uiBreadcrumbs.tpl.html"></ui-breadcrumbs>
+        <div ui-view="content" style="min-height: 600px;"></div>
     </div>
+</div>
+
+<div class="footer">
+    <p translate="footer">This is your footer</p>
 </div>
 
 </body>
 
+<script src="/resource/plugin/jquery-2.0.0/jquery.min.js"></script>
 <script src="/resource/plugin/angular-1.4.8/js/angular.min.js"></script>
 <script src="/resource/plugin/angular-1.4.8/js/angular-route.js"></script>
+<script src="/resource/plugin/bootstrap v3.3.5/js/bootstrap.min.js"></script>
 
-<script src="page/component/report/report.controller.js"></script>
-<script src="page/component/report/report.js"></script>
 <script src="app.js"></script>
+<script src="page/component/navbar.controller.js"></script>
+<script src="page/component/sidebar.controller.js"></script>
+
 
 </html>
