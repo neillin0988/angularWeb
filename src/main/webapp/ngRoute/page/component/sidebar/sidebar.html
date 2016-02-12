@@ -1,0 +1,60 @@
+<div id="left" style="padding-top: 50px" class="bg-dark dk" ng-controller="SidebarController">
+    <!-- #menu -->
+    <ul id="menu" class="bg-blue dker" >
+
+        <li ui-sref-active="active">
+            <a ui-sref="home">
+                <i class="glyphicon glyphicon-home"></i>
+                <span translate="global.menu.home">Home</span>
+            </a>
+        </li>
+
+        <li ui-sref-active="active"  class="dropdown pointer">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <i class="glyphicon glyphicon-tower"></i>
+                <span class="hidden-tablet" translate="global.menu.report">Report</span>
+                <i class="glyphicon glyphicon-chevron-right float-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active"  >
+                    <a ui-sref="report">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        <span translate="global.menu.publishreport">Report</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li ui-sref-active="active"   class="dropdown pointer">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <i class="glyphicon glyphicon-tower"></i>
+                <span class="hidden-tablet" translate="global.menu.entities.main">System</span>
+                <i class="glyphicon glyphicon-chevron-right float-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li ui-sref-active="active">
+                    <a ui-sref="system">
+                        <i class="glyphicon glyphicon-user"></i>
+                        &#xA0;<span translate="global.menu.entities.role">system</span></a></li>
+            </ul>
+        </li>
+
+        <li id="toggleMenu">
+            <a>
+                <i class="glyphicon glyphicon-circle-arrow-right hidden"></i>
+                <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                <span translate="global.menu.collapse">Collapse</span>
+            </a>
+            <script>
+                $(function () {
+                    $('#toggleMenu').click(function () {
+                        $('#left').toggleClass('small-icon');
+                        $('#toggleMenu i').toggleClass('hidden');
+                        setTimeout(function(){ $(window).resize(); }, 500);
+                    });
+                });
+            </script>
+        </li>
+    </ul>
+    <!-- /#menu -->
+</div>

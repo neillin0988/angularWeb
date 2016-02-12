@@ -7,7 +7,8 @@
 
     <!-- Include bootstrap stylesheets -->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/resource/plugin/bootstrap v3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/resource/css/main.min.css">
 
     <style>
@@ -22,12 +23,14 @@
 <!--[if lt IE 10]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<div ng-include="'page/component/navbar.html'"></div>
-<div ng-include="'page/component/sidebar.html'"></div>
+<!--<div ng-include="'page/component/navbar/navbar.html'"></div>-->
+<!--<div ng-include="'page/component/sidebar/sidebar.html'"></div>-->
+<div ui-view="navbar"></div>
+<div ui-view="sidebar"></div>
 
-<div id="content">
+<div id="content2">
     <div class="well inner">
-        <ui-breadcrumbs displayname-property="data.displayName" template-url="uiBreadcrumbs.tpl.html"></ui-breadcrumbs>
+        <ui-breadcrumbs displayname-property="data.displayName" template-url="page/component/uiBreadcrumbs.tpl.html"></ui-breadcrumbs>
         <div ui-view="content" style="min-height: 600px;"></div>
     </div>
 </div>
@@ -37,15 +40,21 @@
 </div>
 
 </body>
-
-<script src="/resource/plugin/jquery-2.0.0/jquery.min.js"></script>
-<script src="/resource/plugin/angular-1.4.8/js/angular.min.js"></script>
-<script src="/resource/plugin/angular-1.4.8/js/angular-route.js"></script>
-<script src="/resource/plugin/bootstrap v3.3.5/js/bootstrap.min.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/bower_components/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <script src="app.js"></script>
-<script src="page/component/navbar.controller.js"></script>
-<script src="page/component/sidebar.controller.js"></script>
+<script src="page/component/navbar/navbar.controller.js"></script>
+<script src="page/component/sidebar/sidebar.controller.js"></script>
+<script src="page/content/home/home.js"></script>
+<script src="page/content/home/home.controller.js"></script>
+<script src="page/content/report/report.js"></script>
+<script src="page/content/report/report.controller.js"></script>
+<script src="page/content/system/system.js"></script>
+<script src="page/content/system/system.controller.js"></script>
 
 
 </html>

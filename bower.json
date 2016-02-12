@@ -1,0 +1,28 @@
+{
+  "name": "angularWeb",
+  "homepage": "https://github.com/neillin0988/angularWeb",
+  "authors": [
+    "neil <neil@tenmax.io>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "angular-utils-ui-breadcrumbs": "^0.2.2",
+    "bootstrap-sass": "^3.3.6",
+    "angular": "^1.5.0",
+    "font-awesome": "^4.5.0",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0"
+  }
+}
