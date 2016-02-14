@@ -17,66 +17,31 @@
 
 <body>
     <div class="container">
-		<div class="alert alert-info">Dependency Injection service</div>
+		<div class="alert alert-info">Controller extend</div>
 
 		<div class="box">
-			<p><a href="/index-angular.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
+			<p><a href="/index-angular-sample.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
 		</div>
 
-		<p class="red">controller extend</p>
-		<div class="box">
-			<p class="blue">ng-controller="parentCtrl as parent"</p>
-			<div class="box" ng-controller="parentCtrl as parent">
-				<div>parent.name : <input type="text" ng-model="parent.name"><span ng-bind="parent.name"></span></div>
-				
-				<p class="blue">ng-controller="childCtrl as child"</p>
-				<div class="box" ng-controller="childCtrl as child">
-					<div>parent.name : <input type="text" ng-model="parent.name"><span ng-bind="parent.name"></span></div>
-					<div>child.name : <input type="text" ng-model="child.name"><span ng-bind="child.name"></span></div>
-				</div>
-			</div>
-		</div>
-		
-		<p class="red">controller $scope extend</p>
-		<div class="box">
-			<p class="blue">ng-controller="parentCtrl2"</p>
-			<div class="box" ng-controller="parentCtrl2">
-				<div>name : <input type="text" ng-model="name"><span ng-bind="name"></span></div>
-				
-				<p class="blue">ng-controller="childCtrl2"</p>
-				<div class="box" ng-controller="childCtrl2">
-					<div>extend parent name : <input type="text" ng-model="name"><span ng-bind="name"></span></div>
-					<div>extend parent name : <input type="text" ng-model="name"><span ng-bind="name"></span></div>
-					<div>name : <input type="text" ng-model="name2"><span ng-bind="name2"></span></div>
-				</div>
-			</div>
-		</div>
-		
-		
-		<p class="red">controller $scope extend</p>
-		<div class="box">
-			<p class="blue">ng-controller="parentCtrl3"</p>
-			<div class="box" ng-controller="parentCtrl3">
-				<div>name : <input type="text" ng-model="data.name"><span ng-bind="data.name"></span></div>
-				
-				<p class="blue">ng-controller="childCtrl3"</p>
-				<div class="box" ng-controller="childCtrl3">
-					<div>name : <input type="text" ng-model="data.name"><span ng-bind="data.name"></span></div>
-				</div>
-			</div>
-		</div>
-		
-		
-		<p class="red">controller $rootScope</p>
-		<div class="box">
-			<p class="blue">ng-controller="parentCtrl4"</p>
-			<div class="box" ng-controller="parentCtrl4">
-				<div>name : <input type="text" ng-model="data.name"><span ng-bind="data.name"></span></div>
-			</div>
-			<p class="blue">ng-controller="childCtrl4"</p>
-			<div class="box" ng-controller="childCtrl4">
-				<div>name : <input type="text" ng-model="data.name"><span ng-bind="data.name"></span></div>
-			</div>
+		<div class="box" ng-controller="MainCtrl">
+			<h2 class="red">[MainCtrl]</h2>
+			<div class="">MainCtrl title : <span class="red">{{title}}</span></div>
+			<div>name : <input class="box" ng-model="name"></div>
+
+			<div class="box" ng-controller="SecondCtrl">
+				<h2 class=" green">[SecondCtrl]</h2>
+				<div class="">parent title : <span class="red">{{$parent.title}}</span></div>
+				<div class="">title : <span class="green">{{title}}</span></div>
+				<div>name : <input class="box" ng-model="name"></div>
+
+				<div class="box" ng-controller="ThirdCtrl">
+					<h2 class=" blue">[ThirdCtrl]</h2>
+					<div class="">parent parent title : <span class="red">{{$parent.$parent.title}}</span></div>
+					<div class="">parent title : <span class="green">{{$parent.title}}</span></div>
+					<div class="">title : <span class="blue">{{title}}</span></div>
+					<div>name : <input class="box" ng-model="name"></div>
+				</div> <!-- // ThirdCtrl -->
+			</div> <!-- // SecondCtrl -->
 		</div>
     </div>
 </body>

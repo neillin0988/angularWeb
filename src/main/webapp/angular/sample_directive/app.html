@@ -29,7 +29,7 @@
 		<div ng-controller="myCtrl">
 
 			<div class="box">
-				<p><a href="/index-angular.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
+				<p><a href="/index-angular-sample.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
 			</div>
 
 			<div class="box row" style="z-index:999; position: fixed; right: 50px;">
@@ -77,6 +77,25 @@
 							<div class="col-sm-3" ng-bind="data.price"></div>
 						</div>
 					</div>
+				</div>
+
+				<div class="row" style="font-size:25px">
+					<select ng-model="data" ng-options="data.name for data in dataLs"></select>
+					<select ng-model="data" ng-options="data.atk for data in dataLs"></select>
+					<select ng-model="data" ng-options="data.price for data in dataLs"></select>
+					<br/>
+					<select ng-model="data" ng-options="data.name + '-' + data.atk + '-' + data.price for data in dataLs"></select>
+					<br/>
+					<select ng-model="data" ng-options="data.name as data.name for data in dataLs">
+					</select>
+					<br/>
+					<div class="box blue">
+						{{data}}
+					</div>
+					<br/>
+					<a href="http://blog.miniasp.com/post/2013/05/11/AngularJS-ng-module-select-ngOptions-usage-samples.aspx">
+						搞懂 AngularJS 預設模組 select 標籤的 ngOptions 參數用法
+					</a>
 				</div>
 			</div>
 			

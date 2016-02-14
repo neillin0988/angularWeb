@@ -8,7 +8,7 @@ app.config(
         },
         views: {
             'content@': {
-               templateUrl: '/ngRoute/page/content/home/home.html',
+               templateUrl: '/ssp-web/page/content/home/home.html',
                controller: 'MainController'
             }
         }

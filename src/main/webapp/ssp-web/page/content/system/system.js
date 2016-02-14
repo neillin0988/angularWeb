@@ -8,7 +8,7 @@ app.config(['$stateProvider',
          },
          views: {
              'content@': {
-               templateUrl: '/ngRoute/page/content/system/system.html',
+               templateUrl: '/ssp-web/page/content/system/system.html',
                controller: 'SystemController'
              }
          }
