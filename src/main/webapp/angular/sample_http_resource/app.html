@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Dependency Injection service</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/resource/css/main.css">
+	
+	<style>
+	</style>
+	
+</head>
+
+<body>
+    <div class="container" ng-cloak>
+		<div class="alert alert-info">Controller extend</div>
+
+		<div class="box">
+			<p><a href="/index-angular-sample.html"><i class="fa fa-arrow-left"></i></i>&nbsp;home</a></p>
+		</div>
+
+		<div class="box" ng-controller="myCtrl">
+			{{httpPublishers}}
+			<select ng-model="http"
+					ng-options="p.id as p.name for p in httpPublishers">
+
+			</select>
+			<hr/>
+			{{resourcePublishers}}
+			<select ng-model="resource"
+					ng-options="p.id as p.name for p in resourcePublishers">
+		</div>
+    </div>
+</body>
+
+<script src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.5.0/angular-resource.min.js"></script>
+<!--<script src="/bower_components/angular/angular.min.js"></script>-->
+<script src="app.js"></script>
+
+</html>
